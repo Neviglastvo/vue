@@ -1,5 +1,5 @@
 backend:
-  name: vue
+  name: github
   repo: ParadiseSeeker/vue
 
 media_folder: "static/uploads"
