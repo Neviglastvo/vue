@@ -26,24 +26,52 @@ function addStyleResource (rule) {
 
 module.exports = {
 	siteName: 'Gridsome',
-	plugins: [],
+	transformers: {
+		remark: {
+			externalLinksTarget: '_blank',
+			externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+			anchorClassName: 'icon icon-link',
+			plugins: [
+			// ...global plugins
+			]
+		}
+	},
+	plugins: [
+		{
+			use: '@gridsome/source-filesystem',
+			options: {
+				path: 'posts/**/*.md',
+				typeName: 'Post',
+				remark: {
+					plugins: [
+						// ...local plugins
+					]
+				}
+			}
+		},
+		{
+			use: `gridsome-plugin-netlify-cms`,
+			options: {
+				publicPath: `/admin`
+			}
+		},
+	],
 	chainWebpack (config) {
-	// Load variables for all vue-files
-	const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+		// Load variables for all vue-files
+		const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
 
-	types.forEach(type => {
-		addStyleResource(config.module.rule('sass').oneOf(type))
-	})
+		types.forEach(type => {
+			addStyleResource(config.module.rule('sass').oneOf(type))
+		})
 
-	// or if you use scss
-	types.forEach(type => {
-		addStyleResource(config.module.rule('scss').oneOf(type))
-	})
+		// or if you use scss
+		types.forEach(type => {
+			addStyleResource(config.module.rule('scss').oneOf(type))
+		})
 
-	const svgRule = config.module.rule('svg')
-	svgRule.uses.clear()
-	svgRule.use('vue-svg-loader').loader('vue-svg-loader')
-
-}
+		const svgRule = config.module.rule('svg')
+		svgRule.uses.clear()
+		svgRule.use('vue-svg-loader').loader('vue-svg-loader')
+	}
 }
 
