@@ -8,7 +8,7 @@
 
 <page-query>
 query Post ($id: String!) {
-  post: wordPressPost (id: $id) {
+  post: post (id: $id) {
     title
     content
   }
