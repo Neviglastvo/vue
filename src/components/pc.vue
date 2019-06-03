@@ -4,17 +4,15 @@
     <button @click="onClick">
       Change
     </button>
+    <!-- <h1>{{ $page.post.title }}</h1> -->
   </div>
+
 </template>
 
 <page-query>
 query Pc {
-  posts: allPost (sortBy: "id", order: DESC){
-    edges {
-      node {
-        id
-      }
-    }
+  post {
+    id
   }
 }
 </page-query>
