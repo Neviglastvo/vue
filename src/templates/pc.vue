@@ -1,16 +1,23 @@
 <!-- src/templates/pc.vue -->
 
 <template>
-  <Layout :title="$page.post.title">
-    <div v-html="$page.post.content">
+  <Layout >
+    <div class="pc-card">
+      <h1>{{ $page.pc.title }}</h1>
+      <p >{{ $page.pc.id }}</p>
+      <p v-html="$page.pc.content"></p>
+    </div>
   </Layout>
 </template>
 
 <page-query>
-query Post ($id: String!) {
-  post: post (id: $id) {
+query Pc ($id: String!) {
+  post: pc (id: $id) {
+    id
     title
-    content
+    descriptrion
+    score
+    processor
   }
 }
 </page-query>
@@ -24,7 +31,7 @@ export default {
   },
   metaInfo () {
     return {
-      title: this.$page.post.title
+      title: this.$page.pc.title
     }
   }
 }
