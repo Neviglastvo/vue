@@ -6,13 +6,15 @@ media_folder: "static/uploads"
 public_folder: "/uploads"
 
 collections:
-  - name: "posts"
-    label: "Posts"
-    folder: "posts"
+  - name: "pc"
+    label: "PC"
+    folder: "pc"
     create: true
     slug: "{{slug}}"
     fields:
+      - {label: "ID", name: "id", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Excerpt", name: "excerpt", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Descriptrion", name: "descriptrion", widget: "string"}
+      - {label: "Score", name: "score", widget: "integer"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Processor", name: "processor", widget: "string"}
