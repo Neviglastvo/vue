@@ -2,29 +2,18 @@
 <template>
   <Layout>
     <div class="pcs">
-      <div class="pc" v-for="edge in $page.node.edges" :key="edge.node.id">
+      <div class="pc" v-for="edge in $page.posts.edges" :key="edge.node.id">
         <h2>
-          <g-link :to="`showcase/${edge.node.id}`">{{ edge.node.title }}</g-link>
+          <g-link :to="`pc/${edge.node.title}`">{{ edge.node.title }}</g-link>
         </h2>
       </div>
     </div>
   </Layout>
 </template>
 
-
-
-
-
-
-
-
-
-
-
-
 <page-query>
 query Pc {
-  pc {
+  posts: allPc {
     edges {
       node {
         id

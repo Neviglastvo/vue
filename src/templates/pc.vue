@@ -8,27 +8,6 @@
   </Layout>
 </template>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <page-query>
 query Pc ($path: String!) {
   pc (path: $path) {
