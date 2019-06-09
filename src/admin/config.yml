@@ -24,6 +24,8 @@ collections:
         searchFields: ["title"]
         valueField: "name"
         displayFields: ["title", "score"]
+        fields:
+          - {label: "videocard", name: "videocard", widget: "string"}
 
 
   - name: "videocard"
