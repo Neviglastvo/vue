@@ -17,16 +17,20 @@ collections:
       - {label: "Descriptrion", name: "descriptrion", widget: "string"}
       - {label: "Score", name: "score", widget: "number"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Processor", name: "processor", widget: "string"}
+      - label: "Videocard"
+        name: "videocard"
+        widget: "relation"
+        collection: "videocard"
+        searchFields: ["title"]
+        valueField: "name"
+        displayFields: ["title", "score"]
+
 
   - name: "videocard"
     label: "videocard"
     folder: "pc/videocard"
     create: true
     slug: "{{slug}}"
-    widget: "relation"
-    collection: "manufacturer"
-    searchFields: ["title"]
     fields:
       - {label: "ID", name: "id", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
