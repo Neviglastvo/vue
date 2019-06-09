@@ -18,3 +18,32 @@ collections:
       - {label: "Score", name: "score", widget: "number"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Processor", name: "processor", widget: "string"}
+
+  - name: "videocard"
+    label: "videocard"
+    folder: "pc/videocard"
+    create: true
+    slug: "{{slug}}"
+    widget: "relation"
+    collection: "manufacturer"
+    searchFields: ["title"]
+    fields:
+      - {label: "ID", name: "id", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Score", name: "score", widget: "number"}
+
+
+
+  - name: "manufacturer"
+    label: "manufacturer"
+    folder: "pc/manufacturer"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "ID", name: "id", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Logo", name: "logo", widget: "image"}
+
+
+
