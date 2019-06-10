@@ -1,6 +1,7 @@
 ---
 id: '3'
 title: GEFORCE GTX 1080
+manufacturer: NVIDIA
 baseClock: 1607
 boostClock: 1733
 memorySpeed: 10
