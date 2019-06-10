@@ -1,5 +1,6 @@
 <template>
   <div class="layout">
+      <header/>
     <header class="header">
       <strong>
         <g-link to="/">{{ $static.metaData.siteName }}</g-link>
@@ -14,6 +15,14 @@
     <slot/>
   </div>
 </template>
+
+
+
+<script>
+  export default {
+    name: 'Layout',
+  };
+</script>
 
 <static-query>
 query {

@@ -18,12 +18,19 @@ collections:
       - {label: "Score", name: "score", widget: "number"}
       - {label: "Body", name: "body", widget: "markdown"}
       - label: "Videocard"
-        name: "videocard"
-        widget: "relation"
-        collection: "videocard"
-        searchFields: ["title"]
-        valueField: "title"
-        displayFields: ["title"]
+          name: "videocard"
+          widget: "relation"
+          collection: "videocard"
+          searchFields: ["title"]
+          valueField: "title"
+          displayFields: ["title"]
+      - label: "Processor"
+          name: "processor"
+          widget: "relation"
+          collection: "processor"
+          searchFields: ["title"]
+          valueField: "title"
+          displayFields: ["title"]
 
 
   - name: "videocard"
@@ -34,8 +41,78 @@ collections:
     fields:
       - {label: "ID", name: "id", widget: "string"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Score", name: "score", widget: "number"}
+      - label: "Manufacturer"
+          name: "manufacturer"
+          widget: "relation"
+          collection: "manufacturer"
+          searchFields: ["title"]
+          valueField: "title"
+          displayFields: ["title"]
+      - {label: "Base Clock (MHz)", name: "baseClock", widget: "number"}
+      - {label: "Boost Clock (MHz)", name: "boostClock", widget: "number"}
+      - {label: "Memory Speed (GB/sec)", name: "memorySpeed", widget: "number"}
+      - {label: "Standard Memory Config (DDR)", name: "standardMemoryConfig", widget: "string"}
+      - {label: "Memory Bandwidth (GB/sec)", name: "memoryBandwidth", widget: "string"}
+      - {label: "Maximum GPU Temperature (in C)", name: "temperature", widget: "number"}
+      - {label: "Graphics Card Power (W)", name: "power", widget: "number"}
+      - {label: "WRecommended System Power (W)", name: "systemPower", widget: "number"}
+      - {label: "Supplementary Power Connectors (pin)", name: "powerConnectors", widget: "number"}
+      - {label: "Height (mm)", name: "height", widget: "number"}
+      - {label: "Length (mm)", name: "length", widget: "number"}
+      - {label: "Width (slot)", name: "width", widget: "number"}
+      - {label: "Maximum Digital Resolution", name: "maxResolution", widget: "string"}
+      - {label: "Standard Display Connectors", name: "memorySpeed", widget: "string"}
+      - {label: "Multi Monitor", name: "multiMonitor", widget: "boolean", default: true}
+      - {label: "HDCP", name: "memorySpeed", widget: "string"}
+      - label: "Technology Support"
+          name: "technologySupport"
+          widget: "list"
+          fields:
+            {label: "Technology Support:", name: "technologySupportItem", widget: "string"}
+            {label: "Technology Support Field", name: "technologySupportItemField", widget: "string"}
 
+  - name: "processor"
+    label: "processor"
+    folder: "pc/processor"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "ID", name: "id", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Manufacturer"
+          name: "manufacturer"
+          widget: "relation"
+          collection: "manufacturer"
+          searchFields: ["title"]
+          valueField: "title"
+          displayFields: ["title"]
+      - {label: "Code Name", name: "codeName", widget: "string"}
+      - {label: "Processor Number", name: "number", widget: "string"}
+      - {label: "Lithography (nm)", name: "lithography", widget: "number"}
+      - {label: "Cores", name: "lithography", widget: "number"}
+      - {label: "Threads", name: "lithography", widget: "number"}
+      - {label: "Base Frequency (MHz)", name: "baseFrequency", widget: "number"}
+      - {label: "Boost Frequency (MHz)", name: "boostFrequency", widget: "number"}
+      - {label: "Bus Speed (GT/s)", name: "busSpeed", widget: "number"}
+      - {label: "TDP", name: "tdp", widget: "number"}
+      - {label: "Cache", name: "cache", widget: "number"}
+      - {label: "Max Memory Size", name: "maxRAM", widget: "string"}
+      - {label: "Memory Types", name: "typeRAM", widget: "string"}
+      - {label: "Max of Memory Channels", name: "channelsRAM", widget: "number"}
+      - {label: "Max Memory Bandwidth (GB/s)", name: "bandwidthRAM", widget: "number"}
+      - {label: "ECC Memory Supported", name: "eccRAM", widget: "boolean", default: false}
+      - {label: "Processor Graphics", name: "memoryBandwidth", widget: "string"}
+      - {label: "Graphics Base Frequency", name: "memoryBandwidth", widget: "string"}
+      - {label: "Graphics Max Dynamic Frequency", name: "memoryBandwidth", widget: "string"}
+      - {label: "Graphics Video Max Memory", name: "memoryBandwidth", widget: "string"}
+      - {label: "Graphics Output", name: "memoryBandwidth", widget: "string"}
+      - {label: "Max Resolution", name: "memoryBandwidth", widget: "string"}
+      - label: "Advanced Technologies"
+          name: "advancedTechnologies"
+          widget: "list"
+          fields:
+            {label: "Technology Support:", name: "technologySupportItem", widget: "string"}
+            {label: "Technology Support Field", name: "technologySupportItemField", widget: "string"}
 
 
   - name: "manufacturer"
