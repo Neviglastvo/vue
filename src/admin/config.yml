@@ -72,8 +72,8 @@ collections:
         widget: "list"
         required: "false"
         fields:
-          {label: "Technology Support:", name: "technologySupportItem", widget: "string"}
-          {label: "Technology Support Field", name: "technologySupportItemField", widget: "string"}
+          - {label: "Technology Support:", name: "technologySupportItem", widget: "string"}
+          - {label: "Technology Support Field", name: "technologySupportItemField", widget: "string"}
 
   - name: "processor"
     label: "processor"
@@ -116,8 +116,8 @@ collections:
         name: "advancedTechnologies"
         widget: "list"
         fields:
-          {label: "Technology Support:", name: "technologySupportItem", widget: "string"}
-          {label: "Technology Support Field", name: "technologySupportItemField", widget: "string"}
+          - {label: "Technology Support:", name: "technologySupportItem", widget: "string"}
+          - {label: "Technology Support Field", name: "technologySupportItemField", widget: "string"}
         required: "false"
 
 
