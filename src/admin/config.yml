@@ -58,7 +58,7 @@ collections:
       - {label: "Memory Bandwidth (GB/sec)", name: "memoryBandwidth", widget: "string", required: false}
       - {label: "Maximum GPU Temperature (in C)", name: "temperature", widget: "number", required: false}
       - {label: "Graphics Card Power (W)", name: "power", widget: "number", required: false}
-      - {label: "WRecommended System Power (W)", name: "systemPower", widget: "number", required: false}
+      - {label: "Recommended System Power (W)", name: "systemPower", widget: "number", required: false}
       - {label: "Supplementary Power Connectors (pin)", name: "powerConnectors", widget: "number", required: false}
       - {label: "Height (mm)", name: "height", widget: "number", required: false}
       - {label: "Length (mm)", name: "length", widget: "number", required: false}
