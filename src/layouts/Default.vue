@@ -10,6 +10,7 @@
         <g-link class="nav__link" to="/about">About</g-link>
         <g-link class="nav__link" to="/pc">PC</g-link>
         <g-link class="nav__link" to="/showcase">showcase</g-link>
+        <g-link class="nav__link" to="/slayer">slayer</g-link>
       </nav>
     </header>
     <slot/>
@@ -58,4 +59,18 @@ body {
 .nav__link {
   margin-left: 20px;
 }
+</style>
+
+<style lang="sass">
+.home-links
+  a
+    margin-right: 3rem
+    &:last-child
+      color: red
+
+.logo
+  fill: #fff
+  width: 40px
+  height: 40px
+
 </style>

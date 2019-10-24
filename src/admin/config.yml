@@ -133,4 +133,16 @@ collections:
       - {label: "Logo", name: "logo", widget: "image", required: false}
 
 
+  - name: "game"
+    label: "game"
+    folder: "pc/game"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "ID", name: "id", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - {label: "Icon", name: "icon", widget: "image", required: false}
+
+
 
