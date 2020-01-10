@@ -2,17 +2,22 @@
 <template>
   <Layout>
     <div class="pcs">
-      <div class="pc" v-for="edge in $page.posts.edges" :key="edge.node.id">
-        <h2>
-          <g-link :to="`pc/${edge.node.title}`">{{ edge.node.title }}</g-link>
-        </h2>
-      </div>
+      <g-link
+        class="pc-card"
+        :to="`pc/${edge.node.title}`"
+        :key="edge.node.id"
+        v-for="edge in $page.posts.edges"
+      >
+        {{ edge.node.videocard }}
+        {{ edge.node.score }}
+        {{ edge.node.descriptrion }}
+      </g-link>
     </div>
   </Layout>
 </template>
 
 <page-query>
-query Pc {
+query PC {
   posts: allPc {
     edges {
       node {
@@ -20,7 +25,7 @@ query Pc {
         title
         descriptrion
         score
-        processor
+        videocard
       }
     }
   }
@@ -30,14 +35,14 @@ query Pc {
 <script>
 export default {
   metaInfo: {
-    title: 'PC'
+    title: "PC"
   },
   methods: {
     shortenText(text) {
-      return text.slice(0,300) + '...'
+      return text.slice(0, 10) + "...";
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -46,13 +51,15 @@ export default {
   flex-wrap: wrap;
   justify-content: center;
 }
-.pc {
+.pc-card {
+  background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(255, 255, 255, 0.5);
   padding: 0 15px 20px;
   margin: 20px 5px;
   width: 300px;
+  color: #000;
 }
 .img-wrapper {
   width: 100%;
