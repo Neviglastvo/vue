@@ -1,17 +1,15 @@
 <template>
   <Layout>
-    <div class="pc">{{ $page.pc.title }}</div>
+
+    {{ $page.item.title }}
   </Layout>
 </template>
 
 <page-query>
-query Pc ($path: String!) {
-  pc (path: $path) {
+query ($path: String!) {
+  item: pc (path: $path) {
     id
     title
-    score
-    videocard
-    processor
   }
 }
 </page-query>
@@ -19,7 +17,7 @@ query Pc ($path: String!) {
 <script>
 export default {
   metaInfo: {
-    title: "Details"
+    title: 'asd'
   }
 };
 </script>
@@ -31,6 +29,10 @@ export default {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
   padding: 0 15px 20px;
   margin: 20px 5px;
+}
+
+.pc a {
+  color: #000
 }
 .img-wrapper {
   text-align: center;

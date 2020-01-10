@@ -2,17 +2,18 @@
 <template>
   <Layout>
     <div class="pcs">
-      <g-link
+      <div
         class="pc-card"
-        :to="`${edge.node.path}`"
-        :key="edge.node.id"
         v-for="edge in $page.items.edges"
+        :id="edge.node.id"
+        :key="edge.node.id"
       >
         {{ edge.node.title }}
         {{ edge.node.videocard }}
         <!-- {{ edge.node.score }} -->
         <!-- {{ edge.node.descriptrion }} -->
-      </g-link>
+        <g-link :to="edge.node.path">{{ edge.node.path }}</g-link>
+      </div>
 
       <Pager :info="$page.items.pageInfo"/>
 
@@ -21,7 +22,7 @@
 </template>
 
 <page-query>
-query PC ($page: Int) {
+query ($page: Int) {
   items: allPC (perPage: 1, page: $page) @paginate {
     totalCount
     pageInfo {
@@ -71,6 +72,10 @@ export default {
   justify-content: center;
 }
 .pc-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
@@ -79,6 +84,10 @@ export default {
   margin: 20px 5px;
   width: 50%;
   color: #000;
+}
+
+.pc-card a {
+  color: #000
 }
 .img-wrapper {
   width: 100%;
