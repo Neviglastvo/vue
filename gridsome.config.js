@@ -20,7 +20,7 @@ function addStyleResource (rule) {
 }
 
 module.exports = {
-	siteName: 'Gridsome',
+	siteName: 'Nevejestvo',
 	transformers: {
 		remark: {
 			externalLinksTarget: '_blank',
@@ -36,7 +36,7 @@ module.exports = {
 			use: '@gridsome/source-filesystem',
 			options: {
 				path: 'pc/**/*.md',
-				typeName: 'Pc',
+				typeName: 'pc',
 				remark: {
 					plugins: [
 						// ...local plugins

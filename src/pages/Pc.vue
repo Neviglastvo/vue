@@ -9,9 +9,9 @@
         v-for="edge in $page.posts.edges"
       >
         {{ edge.node.title }}
-        {{ edge.node.videocard }}
-        {{ edge.node.score }}
-        {{ edge.node.descriptrion }}
+        <!-- {{ edge.node.videocard }} -->
+        <!-- {{ edge.node.score }} -->
+        <!-- {{ edge.node.descriptrion }} -->
       </g-link>
     </div>
   </Layout>
@@ -19,14 +19,11 @@
 
 <page-query>
 query PC {
-  posts: allPc {
+  posts: allpc {
     edges {
       node {
         id
         title
-        descriptrion
-        score
-        videocard
       }
     }
   }

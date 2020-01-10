@@ -5,49 +5,49 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const Axios = require('axios')
+// const Axios = require('axios')
 
-bookISBNs = [
-  "0553211285",
-  "9789875504950",
-  "9780439203524",
-  "9780883017500",
-  "9781402766442",
-  "9781585101634",
-  "9780393044720",
-  "9780143105947",
-  "9780881033731"
-]
+// bookISBNs = [
+//   "0553211285",
+//   "9789875504950",
+//   "9780439203524",
+//   "9780883017500",
+//   "9781402766442",
+//   "9781585101634",
+//   "9780393044720",
+//   "9780143105947",
+//   "9780881033731"
+// ]
 
-module.exports = function (api) {
-  api.loadSource(async store => {
-    let books = []
+// module.exports = function (api) {
+//   api.loadSource(async store => {
+//     let books = []
 
-    for (const isbn of bookISBNs) {
-      const res = await Axios.get(`http://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`)
+//     for (const isbn of bookISBNs) {
+//       const res = await Axios.get(`http://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`)
 
-      if (res.data[`ISBN:${isbn}`]) {
-        books.push(res.data[`ISBN:${isbn}`])
-      }
-    }
+//       if (res.data[`ISBN:${isbn}`]) {
+//         books.push(res.data[`ISBN:${isbn}`])
+//       }
+//     }
 
-    const contentType = store.addContentType({
-      typeName: 'BookEntry',
-      route: 'showcase/:id'
-    })
+//     const contentType = store.addContentType({
+//       typeName: 'BookEntry',
+//       route: 'showcase/:id'
+//     })
 
-    for (const item of books) {
-      contentType.addNode({
-        title: item.title,
-        date: item.publish_date,
-        fields: {
-          ...item
-        }
-      })
-    }
-  })
+//     for (const item of books) {
+//       contentType.addNode({
+//         title: item.title,
+//         date: item.publish_date,
+//         fields: {
+//           ...item
+//         }
+//       })
+//     }
+//   })
 
-  api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api
-  })
-}
+//   api.createPages(({ createPage }) => {
+//     // Use the Pages API here: https://gridsome.org/docs/pages-api
+//   })
+// }

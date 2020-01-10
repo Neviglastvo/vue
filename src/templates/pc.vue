@@ -1,10 +1,6 @@
 <template>
   <Layout>
-    <div class="pc">
-      <h2>
-        <a :href="$page.pc.title">{{ $page.pc.title }}</a>
-      </h2>
-    </div>
+    <div class="pc">{{ $page.pc.title }}</div>
   </Layout>
 </template>
 
@@ -13,8 +9,8 @@ query Pc ($path: String!) {
   pc (path: $path) {
     id
     title
-    descriptrion
     score
+    videocard
     processor
   }
 }
@@ -23,9 +19,9 @@ query Pc ($path: String!) {
 <script>
 export default {
   metaInfo: {
-    title: 'Details'
+    title: "Details"
   }
-}
+};
 </script>
 
 <style>
