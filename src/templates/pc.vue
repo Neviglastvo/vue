@@ -20,8 +20,10 @@ query ($path: String!) {
 
 <script>
 export default {
-  metaInfo: {
-    title: 'asd'
+  metaInfo() {
+    return {
+      title: this.$page.item.title
+    };
   }
 };
 </script>
