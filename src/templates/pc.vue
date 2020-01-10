@@ -1,15 +1,19 @@
 <template>
   <Layout>
-
     {{ $page.item.title }}
+    {{ $page.item.descriptrion }}
+    {{ $page.item.videocard }}
+    {{ $page.item.processor }}
   </Layout>
 </template>
 
 <page-query>
 query ($path: String!) {
   item: pc (path: $path) {
-    id
     title
+    descriptrion
+    videocard
+    processor
   }
 }
 </page-query>

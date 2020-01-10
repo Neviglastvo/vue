@@ -2,21 +2,19 @@
 <template>
   <Layout>
     <div class="pcs">
-      <div
+      <g-link
         class="pc-card"
         v-for="edge in $page.items.edges"
         :id="edge.node.id"
         :key="edge.node.id"
+        :to="edge.node.path"
       >
         {{ edge.node.title }}
-        {{ edge.node.videocard }}
-        <!-- {{ edge.node.score }} -->
+        {{ edge.node.score }}
         <!-- {{ edge.node.descriptrion }} -->
-        <g-link :to="edge.node.path">{{ edge.node.path }}</g-link>
-      </div>
+      </g-link>
 
-      <Pager :info="$page.items.pageInfo"/>
-
+      <Pager :info="$page.items.pageInfo" />
     </div>
   </Layout>
 </template>
@@ -44,7 +42,6 @@ query ($page: Int) {
 </page-query>
 
 <script>
-
 import { Pager } from "gridsome";
 
 export default {
@@ -87,7 +84,7 @@ export default {
 }
 
 .pc-card a {
-  color: #000
+  color: #000;
 }
 .img-wrapper {
   width: 100%;
