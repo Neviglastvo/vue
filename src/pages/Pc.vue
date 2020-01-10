@@ -4,34 +4,48 @@
     <div class="pcs">
       <g-link
         class="pc-card"
-        :to="`pc/${edge.node.id}`"
+        :to="`${edge.node.path}`"
         :key="edge.node.id"
-        v-for="edge in $page.posts.edges"
+        v-for="edge in $page.items.edges"
       >
         {{ edge.node.title }}
-        <!-- {{ edge.node.videocard }} -->
+        {{ edge.node.videocard }}
         <!-- {{ edge.node.score }} -->
         <!-- {{ edge.node.descriptrion }} -->
       </g-link>
+
+      <Pager :info="$page.items.pageInfo"/>
+
     </div>
   </Layout>
 </template>
 
 <page-query>
-query {
-  posts: allpc {
+query PC ($page: Int) {
+  items: allPC (perPage: 1, page: $page) @paginate {
+    totalCount
+    pageInfo {
+      totalPages
+      currentPage
+      isFirst
+      isLast
+    }
     edges {
       node {
         id
         title
+        videocard
+        path
       }
     }
   }
 }
-
 </page-query>
 
 <script>
+
+import { Pager } from "gridsome";
+
 export default {
   metaInfo: {
     title: "PC"
@@ -40,13 +54,19 @@ export default {
     shortenText(text) {
       return text.slice(0, 10) + "...";
     }
+  },
+  components: {
+    Pager
   }
 };
 </script>
 
 <style scoped>
 .pcs {
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -57,7 +77,7 @@ export default {
   box-shadow: 0 1px 4px rgba(255, 255, 255, 0.5);
   padding: 0 15px 20px;
   margin: 20px 5px;
-  width: 300px;
+  width: 50%;
   color: #000;
 }
 .img-wrapper {

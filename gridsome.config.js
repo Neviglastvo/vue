@@ -35,13 +35,19 @@ module.exports = {
 		{
 			use: '@gridsome/source-filesystem',
 			options: {
-				path: 'pc/**/*.md',
+				path: 'pc/pcItem/*.md',
 				typeName: 'PC',
 				remark: {
 					plugins: [
 						// ...local plugins
 					]
 				}
+			},
+			templates: {
+				processor: '/processor/:slug',
+				videocard: '/videocard/:slug',
+				manufacturer: '/manufacturer/:slug',
+				pcItem: '/pcItem/:slug'
 			}
 		},
 		{
