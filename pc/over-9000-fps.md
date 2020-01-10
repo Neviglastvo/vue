@@ -1,8 +1,8 @@
 ---
 id: '0'
 title: Over 60 FPS
-descriptrion: Provide 9000+ FPS
-score: 9000
+descriptrion: Over 60 FPS
+score: 60
 videocard: GEFORCE GTX 1080
 processor: RYZEN 3600
 ---
