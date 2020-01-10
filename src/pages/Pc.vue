@@ -18,7 +18,7 @@
 </template>
 
 <page-query>
-query PC {
+query {
   posts: allpc {
     edges {
       node {
@@ -28,7 +28,6 @@ query PC {
     }
   }
 }
-
 
 </page-query>
 

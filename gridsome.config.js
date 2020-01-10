@@ -36,7 +36,7 @@ module.exports = {
 			use: '@gridsome/source-filesystem',
 			options: {
 				path: 'pc/**/*.md',
-				typeName: 'pc',
+				typeName: 'PC',
 				remark: {
 					plugins: [
 						// ...local plugins
