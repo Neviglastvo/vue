@@ -1,7 +1,7 @@
 ---
-id: '5'
+id: '0'
 title: Over 9000 FPS
-descriptrion: Provide very smooth gaming
+descriptrion: Provide 9000+ FPS
 score: 9000
 videocard: GEFORCE GTX 1080
 ---
