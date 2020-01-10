@@ -56,43 +56,43 @@
 
 <script>
 
-import pin from '~/assets/icons/pinPaper.svg';
+// import 'swiper/dist/css/swiper.css'
+// import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
-import 'swiper/dist/css/swiper.css'
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import pin from '~/assets/icons/pinPaper.svg';
 
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Home'
   },
   components: {
-    swiper,
-    swiperSlide,
+    // swiper,
+    // swiperSlide,
     pin
   },
-  data() {
-    return {
-      swiperOption: {
-        direction: 'horizontal',
-        slidesPerView: 5,
-        spaceBetween: 0,
-        mousewheel: true,
-        pagination: {
-          el: '.swiper-pagination',
-          type: 'progressbar',
-          clickable: true
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-        scrollbar: {
-          el: '.swiper-scrollbar',
-          draggable: true,
-        },
-      }
-    }
-  }
+  // data() {
+  //   return {
+  //     swiperOption: {
+  //       direction: 'horizontal',
+  //       slidesPerView: 5,
+  //       spaceBetween: 0,
+  //       mousewheel: true,
+  //       pagination: {
+  //         el: '.swiper-pagination',
+  //         type: 'progressbar',
+  //         clickable: true
+  //       },
+  //       navigation: {
+  //         nextEl: '.swiper-button-next',
+  //         prevEl: '.swiper-button-prev',
+  //       },
+  //       scrollbar: {
+  //         el: '.swiper-scrollbar',
+  //         draggable: true,
+  //       },
+  //     }
+  //   }
+  // }
 }
 
 </script>

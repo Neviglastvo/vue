@@ -5,7 +5,7 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const axios = require('axios')
+const Axios = require('axios')
 
 bookISBNs = [
   "0553211285",
@@ -24,7 +24,7 @@ module.exports = function (api) {
     let books = []
 
     for (const isbn of bookISBNs) {
-      const res = await axios.get(`http://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`)
+      const res = await Axios.get(`http://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`)
 
       if (res.data[`ISBN:${isbn}`]) {
         books.push(res.data[`ISBN:${isbn}`])
