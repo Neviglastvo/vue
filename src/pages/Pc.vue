@@ -4,10 +4,11 @@
     <div class="pcs">
       <g-link
         class="pc-card"
-        :to="`pc/${edge.node.title}`"
+        :to="`pc/${edge.node.id}`"
         :key="edge.node.id"
         v-for="edge in $page.posts.edges"
       >
+        {{ edge.node.title }}
         {{ edge.node.videocard }}
         {{ edge.node.score }}
         {{ edge.node.descriptrion }}
@@ -30,6 +31,8 @@ query PC {
     }
   }
 }
+
+
 </page-query>
 
 <script>

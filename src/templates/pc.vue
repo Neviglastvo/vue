@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style>
-.Pc {
+.pc {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
@@ -39,7 +39,7 @@ export default {
 .img-wrapper {
   text-align: center;
 }
-.Pc-footer {
+.pc-footer {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
