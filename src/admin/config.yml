@@ -94,8 +94,8 @@ collections:
       - {label: "Code Name", name: "codeName", widget: "string", required: false}
       - {label: "Processor Number", name: "number", widget: "string", required: false}
       - {label: "Lithography (nm)", name: "lithography", widget: "number", required: false}
-      - {label: "Cores", name: "lithography", widget: "number", required: false}
-      - {label: "Threads", name: "lithography", widget: "number", required: false}
+      - {label: "Cores", name: "cores", widget: "number", required: false}
+      - {label: "Threads", name: "threads", widget: "number", required: false}
       - {label: "Base Frequency (MHz)", name: "baseFrequency", widget: "number", required: false}
       - {label: "Boost Frequency (MHz)", name: "boostFrequency", widget: "number", required: false}
       - {label: "Bus Speed (GT/s)", name: "busSpeed", widget: "number", required: false}
