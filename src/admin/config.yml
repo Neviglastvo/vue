@@ -120,6 +120,75 @@ collections:
           - {label: "Technology Support Field", name: "technologySupportItemField", widget: "string"}
         required: false
 
+  - name: "motherboard"
+    label: "MOTHERBOARD"
+    folder: "pc/motherboard"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "ID", name: "id", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Manufacturer"
+        name: "manufacturer"
+        widget: "relation"
+        collection: "manufacturer"
+        searchFields: ["title"]
+        valueField: "title"
+        displayFields: ["title"]
+        required: false
+      - {label: "Socket", name: "socket", widget: "string", required: true}
+      - {label: "FORM FACTOR", name: "formFactor", widget: "string", required: true}
+      - {label: "CHIPSET", name: "chipset", widget: "string", required: true}
+      - {label: "DDR4 MEMORY", name: "ram", widget: "string", required: true}
+      - {label: "DIMM SLOTS", name: "ramCount", widget: "number", required: true}
+      - {label: "MAX MEMORY (GB)", name: "ramMax", widget: "number", required: true}
+      - {label: "PCI-E X16", name: "pciEX16", widget: "number", required: true}
+      - {label: "PCI-E GENERATION", name: "pcieGeneration", widget: "number", required: false}
+      - {label: "SATAIII", name: "sata3", widget: "number", required: true}
+      - {label: "M.2 SLOT", name: "m2", widget: "number", required: true}
+      - {label: "LAN", name: "lan", widget: "string", required: false}
+      - {label: "VGA", name: "vga", widget: "number", required: false}
+      - {label: "HDMI", name: "hdmi", widget: "number", required: false}
+      - label: "Advanced Technologies"
+        name: "advancedTechnologies"
+        widget: "list"
+        fields:
+          - {label: "Technology Support:", name: "technologySupportItem", widget: "string"}
+          - {label: "Technology Support Field", name: "technologySupportItemField", widget: "string"}
+        required: false
+
+
+  - name: "powerSupply"
+    label: "Power Supply"
+    folder: "pc/powerSupply"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "ID", name: "id", widget: "string"}
+      - {label: "Title", name: "title", widget: "string"}
+      - label: "Manufacturer"
+        name: "manufacturer"
+        widget: "relation"
+        collection: "manufacturer"
+        searchFields: ["title"]
+        valueField: "title"
+        displayFields: ["title"]
+        required: false
+      - {label: "AC Input", name: "acInput", widget: "string", required: true}
+      - {label: "Frequency", name: "frequency", widget: "string", required: true}
+      - {label: "Maximum Load", name: "maxLoad", widget: "number", required: true}
+      - {label: "Form factor", name: "formFactor", widget: "string", required: true}
+      - {label: "Efficiency", name: "efficiency", widget: "string", required: true}
+      - {label: "Dimension: Width", name: "dimensionW", widget: "number", required: true}
+      - {label: "Dimension: Height", name: "dimensionH", widget: "number", required: true}
+      - {label: "Dimension:  Depth", name: "dimensionD", widget: "number", required: true}
+      - label: "Advanced Technologies"
+        name: "advancedTechnologies"
+        widget: "list"
+        fields:
+          - {label: "Technology Support:", name: "technologySupportItem", widget: "string"}
+          - {label: "Technology Support Field", name: "technologySupportItemField", widget: "string"}
+        required: false
 
   - name: "manufacturer"
     label: "MANUFACTURER"
@@ -131,7 +200,6 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown", required: false}
       - {label: "Logo", name: "logo", widget: "image", required: false}
-
 
   - name: "game"
     label: "GAME"

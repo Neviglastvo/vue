@@ -1,27 +1,24 @@
 <template>
   <div class="layout">
-      <header/>
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metaData.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about">About</g-link>
-        <g-link class="nav__link" to="/pc">PC</g-link>
-        <g-link class="nav__link" to="/slayer">slayer</g-link>
-      </nav>
-    </header>
-    <slot/>
+    <Header />
+    <div class="layout__content">
+      <slot />
+    </div>
+    <!-- <Footer /> -->
   </div>
 </template>
 
-
-
 <script>
-  export default {
-    name: 'Layout',
-  };
+import Header from "~/components/Header.vue";
+// import Footer from "~/components/Footer.vue";
+
+export default {
+  name: "Layout",
+  components: {
+    Header,
+    // Footer
+  }
+};
 </script>
 
 <static-query>
@@ -34,25 +31,30 @@ query {
 
 <style>
 body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
   line-height: 1.5;
 }
 
 .layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.layout__content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
 .header {
+  width: 100%;
+  max-width: 400px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
 }
 
 .nav__link {
